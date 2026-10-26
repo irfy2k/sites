@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ilm Ghar Academy, Model Town (sample site)</title>
+<meta name="description" content="Sample website for a made-up tuition academy in Model Town, Lahore. Pick your subjects and see your week, your fee and any clashes.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Ilm Ghar Academy, Model Town (sample site)">
+<meta property="og:description" content="Sample website for a made-up tuition academy in Model Town, Lahore. Pick your subjects and see your week, your fee and any clashes.">
+<meta property="og:image" content="https://irfy2k.github.io/sites/assets/og/academy.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,800&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<style>
+  :root {
+    --bg: #ffffff; --surface: #f4f4f4; --ink: #111111; --muted: #4a4a4a;
+    --accent: #1a4be0; --accent-ink: #ffffff; --accent-strong: #133ab3; --tint: #dfe6fb;
+    --font-display: 'Bodoni Moda', Georgia, serif; --font-text: 'Jost', system-ui, sans-serif;
+    --step-display: clamp(3.4rem, 1rem + 7vw, 8.5rem);
+    --margin: clamp(1.25rem, 3vw, 3rem); --radius: 0px;
+  }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; line-height: .95; }
+  .hero .top .demo a { display: inline; min-height: 0; text-decoration: underline; }
+  .button { font-weight: 500; clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%, 0 10px); }
+  @media (hover: hover) and (pointer: fine) { .button:hover { background: var(--accent-strong); } }
+
+  /* hero: dark ground, a stack of tabbed folders, one per section */
+  .hero { background: var(--ink); color: #fff; min-height: 100svh; display: grid; grid-template-rows: auto auto 1fr; overflow: hidden; }
+  .hero .top { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 var(--margin); min-height: 64px; font-size: var(--step-small); }
+  .hero .top b { grid-column: 2; font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; }
+  .hero .top a { grid-column: 3; justify-self: end; color: #fff; min-height: 44px; display: inline-flex; align-items: center; }
+  .hero .head { text-align: center; padding: 3rem var(--margin) 3.5rem; }
+  .hero h1 { font-size: var(--step-display); }
+  .hero .head p { font-family: var(--font-display); font-weight: 500; font-size: var(--step-lead); max-width: 46ch; margin: 1.5rem auto 0; }
+  .stack { position: relative; width: 86%; margin-inline: auto; min-height: 21rem; }
+  .folder { position: absolute; inset: calc(var(--n) * 64px) 0 auto; height: 100%; background: var(--c); color: var(--t, var(--ink)); }
+  .folder .tab { position: absolute; bottom: 100%; left: var(--x); height: 40px; padding: 0 2rem; display: flex; align-items: center; background: var(--c); color: inherit; text-decoration: none; font-weight: 500; clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 100%, 0 100%); transition: transform var(--t-ui) var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) { .folder .tab:hover { transform: translateY(-4px); } }
+  .folder.front { padding: 2rem; display: flex; gap: 2rem; align-items: start; justify-content: space-between; }
+  .folder.front p { max-width: 40ch; }
+
+  section { padding: clamp(5rem, 9vw, 8.5rem) var(--margin); }
+  section h2 { font-size: var(--step-head); }
+  .lead { font-size: var(--step-lead); max-width: 42ch; margin-top: 1rem; }
+
+  /* the live thing: your week */
+  .plan { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 3rem; }
+  .plan .intro { grid-column: 1 / span 5; }
+  .plan .intro figure { margin-top: 2.5rem; }
+  .plan .intro img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .plan figcaption, .note { margin-top: .6rem; font-size: var(--step-small); color: var(--muted); }
+  .picker { grid-column: 7 / -1; }
+  .subjects { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; border: 0; padding: 0; margin: 0; min-width: 0; }
+  .subjects legend { grid-column: 1 / -1; }
+  .subjects label { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; background: var(--surface); padding: 12px 16px; min-height: 56px; cursor: pointer; transition: background-color var(--t-ui) ease; }
+  .subjects label:has(input:checked) { background: var(--tint); }
+  .subjects input { width: 20px; height: 20px; accent-color: var(--accent); }
+  .subjects small { display: block; color: var(--muted); }
+  .subjects .fee { font-variant-numeric: tabular-nums; }
+  .week { margin-top: 1.5rem; display: grid; grid-template-columns: 3rem repeat(6, minmax(0, 1fr)); grid-template-rows: 32px repeat(10, 26px); gap: 2px; background: var(--surface); padding: 2px; font-size: var(--step-small); }
+  .week .d, .week .h { display: flex; align-items: center; justify-content: center; color: var(--muted); }
+  .week .h { justify-content: start; padding-left: 4px; }
+  .week .slot { background: var(--accent); color: #fff; padding: 2px 6px; overflow: hidden; line-height: 1.15; animation: drop var(--t-ui) var(--ease-out); }
+  .week .slot.clash { background: var(--ink); }
+  @keyframes drop { from { transform: translateY(-6px); opacity: 0; } }
+  .sum { margin-top: 1.25rem; display: grid; grid-template-columns: 1fr auto; gap: .5rem 1rem; align-items: baseline; }
+  .sum .total { font-family: var(--font-display); font-weight: 800; font-size: var(--step-head); line-height: 1; }
+  .sum .button { grid-column: 1 / -1; justify-self: start; margin-top: .5rem; }
+  #clash { grid-column: 1 / -1; }
+  #clash:empty { display: none; }
+
+  /* proof: the class register, one row of twelve seats per batch */
+  .seats { background: var(--tint); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 3rem; align-items: start; }
+  .seats .intro { grid-column: 1 / span 4; }
+  .register { grid-column: 6 / -1; background: var(--bg); padding: clamp(1.5rem, 3vw, 3rem); }
+  .register h3 { font-size: var(--step-lead); text-align: center; }
+  .register > p { text-align: center; color: var(--muted); font-size: var(--step-small); margin: .3rem auto 1.5rem; }
+  .register ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .register li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; }
+  .dots { display: grid; grid-template-columns: repeat(12, 12px); gap: 4px; }
+  .dots i { width: 12px; height: 12px; border-radius: 50%; background: #d9d9d9; }
+  .dots i.t { background: var(--accent); }
+  .register .left { font-variant-numeric: tabular-nums; min-width: 6ch; text-align: right; }
+
+  /* fees: an admission ticket with a tear-off stub */
+  .fees { background: var(--surface); }
+  .fees .wrap { max-width: 64rem; margin-inline: auto; }
+  .ticket { margin-top: 3rem; display: grid; grid-template-columns: 1fr 15rem; background: var(--bg); position: relative; }
+  .ticket::before, .ticket::after { content: ""; position: absolute; right: calc(15rem - 14px); width: 28px; height: 28px; border-radius: 50%; background: var(--surface); }
+  .ticket::before { top: -14px; } .ticket::after { bottom: -14px; }
+  .ticket .main { padding: 2rem clamp(1.5rem, 3vw, 2.5rem); }
+  .ticket table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .ticket th { text-align: left; font-weight: 500; padding: 10px 0; }
+  .ticket td { padding: 10px 0 10px 1rem; text-align: right; white-space: nowrap; vertical-align: top; }
+  .ticket th small { display: block; font-weight: 400; color: var(--muted); }
+  .ticket tr + tr > * { border-top: 2px solid var(--surface); }
+  .stub { border-left: 4px dotted var(--surface); padding: 2rem 1.5rem; background: var(--accent); color: #fff; display: grid; align-content: space-between; gap: 1.5rem; }
+  .stub b { font-family: var(--font-display); font-size: var(--step-head); line-height: 1; display: block; }
+  .stub .button { background: #fff; color: var(--accent); }
+  .fees .note { color: var(--muted); max-width: 60ch; }
+
+  /* the founder's letter */
+  .letter { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 3rem; align-items: start; }
+  .letter .sheet { grid-column: 2 / span 6; font-family: var(--font-display); font-weight: 500; font-size: var(--step-lead); line-height: 1.5; }
+  .letter .sheet p + p { margin-top: 1.1em; }
+  .letter .sign { font-family: var(--font-text); font-size: var(--step-body); }
+  .letter figure { grid-column: 9 / -1; }
+  .letter img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+  .letter figcaption { margin-top: .6rem; font-size: var(--step-small); color: var(--muted); }
+
+  /* faq beside a tall photograph */
+  .faq { background: var(--accent); color: #fff; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 3rem; }
+  .faq figure { grid-column: 1 / span 4; }
+  .faq figure img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
+  .faq figcaption { margin-top: .6rem; font-size: var(--step-small); }
+  .faq .qs { grid-column: 6 / -1; }
+  .faq details { border-bottom: 2px solid rgba(255,255,255,.35); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 1rem; padding: 18px 0; font-size: var(--step-lead); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; transition: transform var(--t-ui) var(--ease-out); }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { padding-bottom: 20px; max-width: 52ch; }
+
+  /* visit card set on a photograph */
+  .visit { position: relative; padding: 0; min-height: 90svh; display: grid; place-items: center; }
+  .visit > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .card { position: relative; background: var(--bg); width: min(34rem, calc(100% - 2 * var(--margin))); aspect-ratio: 7 / 5; padding: clamp(1.5rem, 3vw, 2.5rem); display: grid; align-content: space-between; text-align: center; }
+  .card h2 { font-size: var(--step-head); }
+  .card address { font-style: normal; font-size: var(--step-lead); }
+  .card .row { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .visit .credit { position: absolute; right: var(--margin); top: 1rem; background: var(--bg); padding: .3rem .6rem; font-size: var(--step-small); }
+
+  footer { background: var(--ink); color: #fff; padding: 4rem var(--margin) 2rem; text-align: center; }
+  footer .name { font-family: var(--font-display); font-weight: 800; font-size: clamp(3rem, 9vw, 9rem); line-height: 1; }
+  footer .row { margin-top: 2.5rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  footer a { color: #fff; }
+  footer .credits { margin: 2.5rem auto 0; font-size: var(--step-small); max-width: 70ch; color: #cfcfcf; }
+
+  @media (max-width: 63.99em) {
+    .hero .head { padding-top: 2rem; }
+    .hero .top { grid-template-columns: 1fr auto; padding-top: .5rem; }
+    .hero .top .demo { grid-column: 1 / -1; grid-row: 2; text-align: center; padding-bottom: .5rem; }
+    .hero .top b { grid-column: 1; }
+    .hero .top a:not(.demo a) { grid-column: 2; }
+    .hero h1 { font-size: 15vw; }
+    .stack { width: 100%; min-height: 26rem; }
+    .folder { inset: calc(var(--n) * 52px) 0 auto; }
+    .folder .tab { height: 32px; padding: 0 1rem; left: var(--xm); }
+    .folder.front { flex-direction: column; padding: 1.5rem var(--margin); }
+    .folder.front p { max-width: none; }
+    .plan .intro, .picker, .seats .intro, .register, .letter .sheet, .letter figure, .faq figure, .faq .qs { grid-column: 1 / -1; }
+    .faq figure { grid-row: 2; }
+    .lead, .faq details p { max-width: none; }
+    .week { grid-template-columns: 2.4rem repeat(6, minmax(0, 1fr)); }
+    .week .slot { padding: 2px 3px; font-size: .8125rem; }
+    .register li { grid-template-columns: 1fr auto; }
+    .subjects { grid-template-columns: 1fr; }
+    .dots { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+    .dots i { width: auto; aspect-ratio: 1; height: auto; }
+    .ticket { grid-template-columns: 1fr; }
+    .ticket::before, .ticket::after { right: auto; left: -14px; top: auto; bottom: calc(13rem - 14px); }
+    .ticket::after { left: auto; right: -14px; }
+    .stub { border-left: 0; border-top: 4px dotted var(--surface); min-height: 13rem; }
+    .card { aspect-ratio: auto; gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="top"><span class="demo">Sample site by Ahmed Zuhair. <a href="../index.html#prices">See prices</a> or <a href="https://wa.me/923094413394?text=I%20saw%20the%20academy%20sample.%20I%20want%20a%20site%20like%20this.">Get one like this</a></span><b>Ilm Ghar</b><a href="https://wa.me/923094413394">WhatsApp us</a></div>
+  <div class="head">
+    <h1 class="lines"><span class="line"><span data-line style="--i:0">Ilm Ghar Academy</span></span></h1>
+    <p data-rise style="--i:2">O Level, A Level and Matric tuition in batches of twelve, in a house in Block C, Model Town. After school, 3 to 8 pm.</p>
+  </div>
+  <nav class="stack" aria-label="Sections">
+    <div class="folder" style="--n:0;--c:var(--accent);--t:#fff;--x:72%;--xm:66%"><a class="tab" href="#visit">Visit</a></div>
+    <div class="folder" style="--n:1;--c:var(--tint);--x:52%;--xm:44%"><a class="tab" href="#faq">Questions</a></div>
+    <div class="folder" style="--n:2;--c:var(--surface);--x:33%;--xm:22%"><a class="tab" href="#fees">Fees</a></div>
+    <div class="folder" style="--n:3;--c:#c9d5f8;--x:16%;--xm:0%"><a class="tab" href="#seats">Seats</a></div>
+    <div class="folder front" style="--n:4;--c:var(--bg);--x:0%;--xm:0%">
+      <a class="tab" href="#plan" style="left:0">Your week</a>
+      <p>Pick your subjects and see your timetable, your monthly fee and any clashes before you visit.</p>
+      <a class="button" href="#plan">Plan my week</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="plan" class="plan" aria-labelledby="plan-h">
+    <div class="intro" data-reveal>
+      <h2 id="plan-h">Plan your week</h2>
+      <p class="lead">Tick the subjects you need. Your timetable fills in, and we tell you if two batches overlap.</p>
+      <figure><img src="assets/academy/web/euclid.jpg" alt="Hands opening a fold-out geometry diagram in an old printed edition of Euclid" width="1400" height="753" loading="lazy"><figcaption>A fold-out page from the first English Euclid, 1570.</figcaption></figure>
+    </div>
+    <form class="picker" id="picker" data-reveal>
+      <fieldset class="subjects"><legend class="note" style="margin:0 0 .6rem">Batches for the spring session</legend></fieldset>
+      <div class="week" id="week" aria-hidden="true"></div>
+      <div class="sum" aria-live="polite">
+        <span id="sum-line">Pick a subject to see your fee</span>
+        <span class="total" id="sum-total">Rs 0</span>
+        <p id="clash"></p>
+        <a class="button" id="sum-send" href="https://wa.me/923094413394?text=Assalam%20o%20alaikum%2C%20I%27d%20like%20to%20ask%20about%20admission">Ask about these batches</a>
+      </div>
+    </form>
+  </section>
+
+  <section id="seats" class="seats" aria-labelledby="seats-h">
+    <div class="intro" data-reveal>
+      <h2 id="seats-h">Twelve chairs a batch</h2>
+      <p class="lead">The front room holds twelve chairs round one table, so every student is called on in every class. When a batch is full, it’s full.</p>
+    </div>
+    <div class="register" data-reveal>
+      <h3>Spring register</h3>
+      <p>Seats taken this week</p>
+      <ul id="register"></ul>
+    </div>
+  </section>
+
+  <section id="fees" class="fees" aria-labelledby="fees-h">
+    <div class="wrap">
+      <h2 id="fees-h" data-reveal>Fees, per subject, per month</h2>
+      <div class="ticket" data-reveal>
+        <div class="main">
+          <table>
+            <tr><th>Matric Science group<small>Physics, Chemistry, Biology, daily</small></th><td>Rs 7,500</td></tr>
+            <tr><th>O Level, any subject<small>Maths, Physics, Chemistry, English</small></th><td>Rs 9,000</td></tr>
+            <tr><th>A Level, any subject<small>Maths, Chemistry</small></th><td>Rs 12,000</td></tr>
+            <tr><th>Admission, once<small>Includes notes and past-paper booklets</small></th><td>Rs 5,000</td></tr>
+          </table>
+        </div>
+        <div class="stub">
+          <span>Brothers and sisters<b>10% off</b></span>
+          <a class="button" href="https://wa.me/923094413394?text=I%27d%20like%20a%20free%20trial%20class">Book a free trial class</a>
+        </div>
+      </div>
+      <p class="note">Fees are paid by the 10th of each month by JazzCash, Easypaisa, bank transfer or cash at the front desk.</p>
+    </div>
+  </section>
+
+  <section class="letter" aria-labelledby="letter-h">
+    <div class="sheet" data-reveal>
+      <h2 id="letter-h" style="margin-bottom:2rem">A letter from the front room</h2>
+      <p>Dear parents, I started Ilm Ghar in 2017 at our dining table with four O Level students and one whiteboard. Ilm Ghar means house of learning, and it still is one.</p>
+      <p>We keep batches to twelve because I want to know each child’s weak chapter by the third week. Every month you get a one-page report with their test marks and what we are working on next.</p>
+      <p class="sign">Saima Qureshi, founder, teaches O and A Level Chemistry</p>
+    </div>
+    <figure data-reveal><img src="assets/academy/web/astrolabe.jpg" alt="A brass astrolabe with pierced, engraved plates" width="1022" height="1400" loading="lazy"><figcaption>Astrolabe, Iran, late 18th century.</figcaption></figure>
+  </section>
+
+  <section id="faq" class="faq" aria-labelledby="faq-h">
+    <figure data-reveal><img src="assets/academy/web/inkwell-2.jpg" alt="A cobalt blue glass inkwell with a pointed lid" width="924" height="1400" loading="lazy"><figcaption>Blue glass inkwell, 19th century.</figcaption></figure>
+    <div class="qs" data-reveal>
+      <h2 id="faq-h" style="margin-bottom:2rem">Questions</h2>
+      <details><summary>Can my child try a class first?</summary><p>Yes, the first class of any batch is free. Message us to book a seat.</p></details>
+      <details><summary>Are classes for boys and girls together?</summary><p>Matric batches are separate. O and A Level batches are mixed, with separate seating.</p></details>
+      <details><summary>What if my child misses a class?</summary><p>Notes go on the batch WhatsApp group the same evening, and they can sit in another batch of the same subject that week.</p></details>
+      <details><summary>Do you prepare for Cambridge past papers?</summary><p>Every O and A Level batch does a timed past paper every second Saturday, marked by the next class.</p></details>
+      <details><summary>Is there parking?</summary><p>There is space for drop-off on the street outside House 12. Please don’t park across the neighbour’s gate.</p></details>
+      <details><summary>Do you teach online?</summary><p>No. Every class is in person, in the house.</p></details>
+    </div>
+  </section>
+
+  <section id="visit" class="visit" aria-labelledby="visit-h">
+    <img src="assets/academy/web/picsum-208.jpg" alt="Morning light through a paned window onto green trees" width="1600" height="1000" loading="lazy">
+    <div class="card" data-reveal>
+      <h2 id="visit-h">Come and see the room</h2>
+      <address>House 12, Block C, Model Town, Lahore.<br>Five minutes from Model Town Link Road.</address>
+      <div class="row"><a class="button" href="https://wa.me/923094413394?text=I%27d%20like%20to%20visit">Arrange a visit</a><a class="link" href="tel:+923094413394" style="align-self:center">0309 4413394</a></div>
+    </div>
+    <span class="credit">The window of the front room</span>
+  </section>
+</main>
+
+<footer>
+  <div class="name">Ilm Ghar Academy</div>
+  <div class="row"><span>Monday to Saturday, 3 to 8 pm</span><a href="https://wa.me/923094413394">WhatsApp</a><a href="#">Instagram</a></div>
+  <p class="credits">Ilm Ghar Academy is a sample business; names, batches, seats and fees are examples. Pictures: “Astrolabe”, Art Institute of Chicago (CC0); “Inkwell” by Whitefriars Glasshouse, Art Institute of Chicago (CC0); “The Elements of Geometrie… Euclide” popup, Wikimedia Commons (CC BY-SA 3.0); two photographs from Unsplash. Full credits in assets/academy/credits.json.</p>
+</footer>
+
+<script src="../assets/base.js" defer></script>
+<script>
+  // Each batch: days (0 = Monday), start and end hour, monthly fee, seats taken out of 12.
+  const BATCHES = [
+    { id: 'om', name: 'O Level Maths', short: 'O Maths', days: [0, 2, 4], from: 16, to: 17.5, fee: 9000, taken: 11 },
+    { id: 'op', name: 'O Level Physics', short: 'O Phys', days: [1, 3], from: 16, to: 18, fee: 9000, taken: 9 },
+    { id: 'oc', name: 'O Level Chemistry', short: 'O Chem', days: [1, 3, 5], from: 18, to: 19.5, fee: 9000, taken: 12 },
+    { id: 'oe', name: 'O Level English', short: 'O Eng', days: [5], from: 15, to: 17, fee: 9000, taken: 6 },
+    { id: 'am', name: 'A Level Maths', short: 'A Maths', days: [0, 2], from: 18.5, to: 20, fee: 12000, taken: 8 },
+    { id: 'ac', name: 'A Level Chemistry', short: 'A Chem', days: [0, 2], from: 18, to: 20, fee: 12000, taken: 10 },
+    { id: 'ms', name: 'Matric Science group', short: 'Matric', days: [0, 1, 2, 3, 4], from: 15, to: 17, fee: 7500, taken: 7 },
+  ];
+  const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const hr = (h) => { const m = h % 1 ? ':30' : ''; const x = Math.floor(h) > 12 ? Math.floor(h) - 12 : Math.floor(h); return x + m; };
+  const fmt = (n) => 'Rs ' + n.toLocaleString('en-PK');
+  const $ = (id) => document.getElementById(id);
+
+  const box = document.querySelector('.subjects');
+  BATCHES.forEach((b) => {
+    const days = b.days.length === 5 ? 'Monday to Friday' : b.days.map((d) => DAYS[d].slice(0, 3)).join(', ');
+    const l = document.createElement('label');
+    l.innerHTML = `<input type="checkbox" value="${b.id}"${b.taken >= 12 ? ' disabled' : ''}><span>${b.name}<small>${days}, ${hr(b.from)} to ${hr(b.to)} pm${b.taken >= 12 ? ', full' : ''}</small></span><span class="fee">${fmt(b.fee)}</span>`;
+    box.append(l);
+  });
+
+  $('register').replaceChildren(...BATCHES.map((b) => {
+    const li = document.createElement('li'), left = 12 - b.taken;
+    li.innerHTML = `<span>${b.name}</span><span class="dots" aria-hidden="true">${'<i class="t"></i>'.repeat(b.taken)}${'<i></i>'.repeat(left)}</span><span class="left">${left ? left + ' left' : 'Full'}</span>`;
+    return li;
+  }));
+
+  const week = $('week');
+  function render() {
+    const picked = BATCHES.filter((b) => box.querySelector(`[value=${b.id}]`).checked);
+    const cells = [document.createElement('span')];
+    DAYS.forEach((d) => { const s = document.createElement('span'); s.className = 'd'; s.textContent = d.slice(0, 3); cells.push(s); });
+    for (let h = 15; h < 20; h++) { const s = document.createElement('span'); s.className = 'h'; s.textContent = hr(h) + 'pm'; s.style.gridRow = `${(h - 15) * 2 + 2} / span 2`; s.style.gridColumn = 1; cells.push(s); }
+    const clashes = [];
+    picked.forEach((a, i) => picked.slice(i + 1).forEach((b) => {
+      const d = a.days.find((x) => b.days.includes(x));
+      if (d !== undefined && a.from < b.to && b.from < a.to) clashes.push([a, b, d]);
+    }));
+    const clashed = new Set(clashes.flatMap(([a, b]) => [a.id, b.id]));
+    picked.forEach((b) => b.days.forEach((d) => {
+      const s = document.createElement('span');
+      s.className = 'slot' + (clashed.has(b.id) ? ' clash' : '');
+      s.textContent = b.short;
+      s.style.gridColumn = d + 2;
+      s.style.gridRow = `${(b.from - 15) * 2 + 2} / ${(b.to - 15) * 2 + 2}`;
+      cells.push(s);
+    }));
+    week.replaceChildren(...cells);
+
+    const total = picked.reduce((n, b) => n + b.fee, 0);
+    const hours = picked.reduce((n, b) => n + b.days.length * (b.to - b.from), 0);
+    $('sum-total').textContent = fmt(total);
+    $('sum-line').textContent = picked.length ? `${picked.length} subject${picked.length > 1 ? 's' : ''}, ${hours} hours a week, per month` : 'Pick a subject to see your fee';
+    $('clash').textContent = clashes.map(([a, b, d]) => `${a.name} and ${b.name} overlap on ${DAYS[d]}. Ask us about the other batch.`).join(' ');
+    const msg = picked.length ? `Assalam o alaikum, I'd like to ask about admission for: ${picked.map((b) => b.name).join(', ')}.` : "Assalam o alaikum, I'd like to ask about admission";
+    $('sum-send').href = 'https://wa.me/923094413394?text=' + encodeURIComponent(msg);
+  }
+  box.addEventListener('change', render);
+  box.querySelector('[value=om]').checked = true;
+  box.querySelector('[value=op]').checked = true;
+  render();
+</script>
+</body>
+</html>

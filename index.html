@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Websites for Lahore businesses | Ahmed Zuhair</title>
+<meta name="description" content="One-page websites for Lahore shops, clinics, academies and home kitchens. Prices, timings, map and a WhatsApp button. Live in 3 days, from PKR 9,000.">
+<meta property="og:title" content="Put your shop on Google. Websites for Lahore businesses.">
+<meta property="og:description" content="Prices, timings, map and a WhatsApp button on one page. Live in 3 days, from PKR 9,000.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://irfy2k.github.io/sites/assets/og/index.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='23' font-size='19' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23fff'%3EAZ%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f2f2f2;
+    --ink: #000000;
+    --muted: #555555;
+    --accent: #000000;
+    --accent-ink: #ffffff;
+    --accent-strong: #333333;
+    --font-display: 'Switzer', system-ui, sans-serif;
+    --font-text: 'Switzer', system-ui, sans-serif;
+    --step-display: clamp(3.4rem, 0.5rem + 8vw, 8.25rem);
+    --margin: clamp(1.25rem, 3.3vw, 3rem);
+    --section: clamp(7.5rem, 14vw, 15rem);
+    --radius: 0px;
+  }
+  body { letter-spacing: -0.005em; }
+  h1, h2, h3 { font-weight: 600; letter-spacing: -0.04em; line-height: 0.95; }
+  .button { font-weight: 600; font-size: var(--step-body); }
+  @media (hover: hover) and (pointer: fine) { .button:hover { background: var(--accent-strong); } }
+  .button.inverse { background: var(--bg); color: var(--ink); }
+  @media (hover: hover) and (pointer: fine) { .button.inverse:hover { background: var(--surface); } }
+
+  /* ---------- hero: void, then the statement on the 42% axis ---------- */
+  .hero { min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto; padding: 2.75rem var(--margin) 4.5rem; }
+  .top { display: grid; grid-template-columns: 42% 1fr auto; align-items: center; }
+  .wordmark { font-weight: 600; font-size: var(--step-body); text-decoration: none; letter-spacing: -0.02em; }
+  .toplinks { display: flex; gap: 1.75rem; }
+  .toplinks a { min-height: 44px; display: inline-flex; align-items: center; }
+  .hero-body { grid-row: 3; display: grid; grid-template-columns: 42% 1fr; align-items: end; }
+  .hero-aside { padding-right: 2rem; max-width: 30ch; color: var(--muted); font-size: var(--step-body); }
+  .hero-aside p + p { margin-top: .4em; }
+  .hero h1 { font-size: var(--step-display); }
+  .hero .sub { font-size: var(--step-lead); line-height: 1.3; max-width: 30ch; margin-top: 2.25rem; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 1rem 1.75rem; align-items: center; margin-top: 2rem; }
+
+  /* ---------- the live thing: type a business, see its page ---------- */
+  .try { background: var(--accent); color: var(--accent-ink); min-height: 90svh; padding: calc(var(--section) / 2) var(--margin); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; }
+  .try-copy { grid-column: 1 / span 6; }
+  .try h2 { font-size: var(--step-head); }
+  .try .statement { font-size: var(--step-lead); line-height: 1.25; font-weight: 500; letter-spacing: -0.02em; margin-top: 2rem; max-width: 26ch; }
+  .try form { margin-top: 2.5rem; display: grid; gap: 1rem; max-width: 30rem; }
+  .try label { display: grid; gap: .4rem; font-weight: 500; }
+  .try .field { background: #ffffff; color: var(--ink); }
+  .try .field:focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 2px; }
+  .try .button { background: var(--accent-ink); color: var(--ink); justify-self: start; }
+  @media (hover: hover) and (pointer: fine) { .try .button:hover { background: #e6e6e6; } }
+  .try-phone { grid-column: 8 / span 5; justify-self: center; }
+
+  .phone { width: min(320px, 78vw); aspect-ratio: 9 / 18.5; background: var(--accent-ink); padding: 12px; border-radius: 40px; }
+  .screen { height: 100%; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column; font-family: var(--font-text); transition: background-color var(--t-ui) ease, color var(--t-ui) ease; }
+  .screen .s-hero { padding: 34px 20px 22px; }
+  .screen .s-name { font-weight: 700; font-size: 1.85rem; line-height: 1; letter-spacing: -0.03em; overflow-wrap: anywhere; }
+  .screen .s-line { margin-top: 10px; font-size: .95rem; line-height: 1.35; }
+  .screen .s-wa { margin: 18px 0 0; display: inline-block; padding: 11px 16px; border-radius: 999px; background: #1F7A4D; color: #fff; font-weight: 600; font-size: .9rem; }
+  .screen ul { list-style: none; padding: 6px 20px; margin: 0; flex: 1; background: #fff; color: #1d1d1f; }
+  .screen li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; font-size: .9rem; }
+  .screen li + li { border-top: 1px solid #ececec; } /* taste-skill-ignore: phone mock list rows */
+  .screen li b { font-weight: 600; white-space: nowrap; }
+  .screen .s-foot { background: #fff; color: #555; font-size: .8rem; padding: 10px 20px 22px; }
+
+  /* ---------- work: names as one paragraph ---------- */
+  .work { padding: calc(var(--section) / 2) var(--margin); }
+  .work h2 { font-size: var(--step-head); margin-bottom: 2rem; }
+  .names { list-style: none; padding: 0; margin: 0; font-size: var(--step-head); line-height: 1.12; font-weight: 600; letter-spacing: -0.04em; }
+  .names li { display: inline; }
+  .names li:not(:last-child)::after { content: ","; }
+  .names li:last-child::after { content: "."; }
+  .names a { color: var(--ink); text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .12em; text-decoration-color: #c4c4c4; transition: color var(--t-hover) ease; }
+  .names .lead-in { color: var(--ink); }
+  .names .frame { display: inline-block; width: 1.25em; height: .78em; vertical-align: -0.02em; margin-left: .18em; overflow: hidden; transform-origin: left center; transition: transform var(--t-ui) var(--ease-out); }
+  .names .frame img, .names .frame video { width: 100%; height: 100%; object-fit: cover; }
+  @media (hover: hover) and (pointer: fine) {
+    .names a:hover { color: var(--muted); }
+    .names a:hover .frame { transform: scale(1.6); }
+  }
+  .names a:focus-visible { color: var(--muted); }
+  .work-note { margin-top: 2.5rem; font-size: var(--step-body); max-width: 56ch; }
+
+  /* ---------- relief: one photograph, full bleed ---------- */
+  .relief { position: relative; }
+  .relief img { width: 100%; height: min(86svh, 62vw); object-fit: cover; }
+  .relief figcaption { padding: 1rem var(--margin) 0; color: var(--muted); font-size: var(--step-small); }
+
+  /* ---------- showcase: the question and the answer, pinned ---------- */
+  .showcase { padding: calc(var(--section) / 2) var(--margin) 0; }
+  .show-head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: start; }
+  .show-head h2 { grid-column: 1 / span 5; font-size: var(--step-head); }
+  .show-head p { grid-column: 7 / span 6; }
+  .specimens { margin-top: 10vh; height: clamp(14rem, 25vw, 26rem); align-items: end; overflow: hidden; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+  .spec { position: relative; }
+  .spec:first-child { grid-column: 1 / span 6; }
+  .spec:last-child { grid-column: 7 / span 6; }
+  .caps { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); padding-top: 1.25rem; }
+  .caps p:first-child { grid-column: 1 / span 6; }
+  .caps p:last-child { grid-column: 7 / span 6; }
+  .caps b { font-weight: 600; }
+  .spec .word { display: block; font-size: clamp(5rem, 10.5vw, 12rem); line-height: .9; padding-bottom: .06em; letter-spacing: -0.06em; font-weight: 600; white-space: nowrap; }
+  .spec .count { font-variant-numeric: tabular-nums; }
+
+  /* ---------- pricing: plans as a large table ---------- */
+  .pricing { padding: calc(var(--section) / 2) var(--margin); }
+  .plans { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: var(--step-body); }
+  .plans th, .plans td { text-align: left; vertical-align: top; padding: 1.1rem 1.25rem; }
+  .plans thead th { padding-top: 1.5rem; padding-bottom: 1.75rem; }
+  .plans .plan-name { display: block; font-size: var(--step-head); font-weight: 600; letter-spacing: -0.035em; line-height: 1; }
+  .plans .plan-price { display: block; font-size: var(--step-lead); font-weight: 400; letter-spacing: -0.035em; line-height: 1.05; margin-top: .3rem; }
+  .plans .plan-price small { font-size: var(--step-body); letter-spacing: 0; }
+  .plans tbody tr:nth-child(odd) { background: var(--surface); }
+  .plans .rec { background: var(--accent) !important; color: var(--accent-ink); }
+  .plans tbody th { font-weight: 400; color: var(--muted); }
+  .plans h2 { font-size: var(--step-head); }
+  .plans .buy td { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .plans .buy .button { width: 100%; }
+  .plans .rec .button { background: var(--accent-ink); color: var(--ink); }
+  .plans-mobile { display: none; }
+  .care { margin-top: 2rem; font-size: var(--step-body); max-width: 60ch; }
+
+  /* ---------- how it works: lines that step across ---------- */
+  .steps { padding: calc(var(--section) / 2) var(--margin); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 3.5rem; }
+  .steps li { list-style: none; }
+  .steps h2, .steps h3 { font-size: var(--step-head); white-space: nowrap; }
+  .steps p { margin-top: .75rem; max-width: 34ch; }
+  .steps .s1 { grid-column: 1 / -1; }
+  .steps .s2 { grid-column: 3 / -1; }
+  .steps .s3 { grid-column: 5 / -1; }
+  .steps .s4 { grid-column: 7 / -1; }
+  .steps .pic { grid-column: 1 / span 5; grid-row: 3 / span 2; align-self: end; }
+  .steps .pic img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .steps .pic figcaption { margin-top: .6rem; font-size: var(--step-small); color: var(--muted); }
+  .steps ol { display: contents; }
+
+  /* ---------- faq: answers as reading text ---------- */
+  .faq { padding: calc(var(--section) / 2) var(--margin); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); background: var(--surface); }
+  .faq-side { grid-column: 1 / span 3; }
+  .faq h2 { font-size: var(--step-head); }
+  .faq-text { font-size: var(--step-body); }
+  .faq-side figure { margin-top: 2.5rem; }
+  .faq-side img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .faq-side figcaption { margin-top: .6rem; font-size: var(--step-small); color: var(--muted); }
+  .faq-text { grid-column: 5 / span 8; columns: 2; column-gap: 56px; }
+  .faq-text p { break-inside: avoid; margin: 0 0 1.25rem; max-width: 38ch; line-height: 1.55; }
+  .faq-text b { font-weight: 600; }
+
+  /* ---------- contact: address in display rows ---------- */
+  .contact { padding-top: calc(var(--section) / 2); }
+  .contact h2 { padding: 0 var(--margin) 2rem; font-size: var(--step-head); }
+  .rows { list-style: none; padding: 0; margin: 0; }
+  .rows li { min-height: clamp(5.25rem, 9vw, 9.5rem); display: flex; align-items: flex-end; gap: 1.5rem; padding: 0 var(--margin) .55em; font-size: var(--step-head); line-height: 1; letter-spacing: -0.04em; }
+  .rows li:nth-child(even) { background: var(--surface); }
+  .rows a { text-decoration: none; }
+  .rows .photo { margin-left: auto; width: clamp(4rem, 7vw, 7rem); aspect-ratio: 1; border-radius: 50%; overflow: hidden; align-self: center; }
+  .rows .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .rows li.greet { background: var(--accent); color: var(--accent-ink); }
+  .round { display: inline-grid; place-items: center; width: .9em; height: .9em; border-radius: 50%; background: var(--accent-ink); color: var(--accent); align-self: center; transition: transform var(--t-press) var(--ease-out); }
+  .round svg { width: 45%; height: 45%; }
+  .round:active { transform: scale(.94); }
+  @media (hover: hover) and (pointer: fine) { .rows a:hover { color: var(--muted); } .greet a:hover { color: var(--accent-ink); } .round:hover { transform: translateX(.08em); } }
+
+  /* ---------- footer: wordmark below ---------- */
+  footer { background: var(--accent); color: var(--accent-ink); display: grid; row-gap: clamp(4rem, 10vw, 9rem); padding: 2.5rem var(--margin) 1.25rem; }
+  footer .legal { margin-top: calc(1.25rem - clamp(4rem, 10vw, 9rem)); }
+  .cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem var(--gutter); font-size: var(--step-small); }
+  .cols ul { list-style: none; padding: 0; margin: 0; }
+  .cols li:first-child { font-weight: 600; }
+  .cols a { text-underline-offset: .18em; }
+  .bigname { width: 100%; height: auto; fill: currentColor; }
+  .legal { margin-top: 1.25rem; font-size: var(--step-small); max-width: 75ch; }
+
+  /* ---------- phone composition ---------- */
+  @media (max-width: 63.99em) {
+    .hero { padding: 1.5rem 1.25rem 3rem; min-height: auto; row-gap: 4.5rem; }
+    .top { grid-template-columns: 1fr auto; }
+    .toplinks { display: none; }
+    .top .button { min-height: 2.75rem; padding: 0 1rem; font-size: 1rem; }
+    .hero-body { grid-template-columns: 1fr; }
+    .hero-aside { display: none; }
+    .hero h1 { font-size: 12.5vw; }
+    .hero .sub { font-size: 1.125rem; margin-top: 1.5rem; }
+    .try { grid-template-columns: 1fr; row-gap: 3rem; padding-inline: 1.25rem; }
+    .try-copy, .try-phone { grid-column: 1; }
+    .try .statement { font-size: 1.4rem; }
+    .names { font-size: 9vw; }
+    .caps { grid-template-columns: 1fr; row-gap: .5rem; }
+    .caps p { grid-column: 1 !important; }
+    .names .frame:not(.keep) { display: none; }
+    .names a { color: var(--ink); line-height: 1.25; }
+    .show-head { grid-template-columns: 1fr; row-gap: 1.25rem; }
+    .show-head h2, .show-head p { grid-column: 1; }
+    .specimens { grid-template-columns: 1fr; height: auto; overflow: visible; margin-top: 3rem; row-gap: 0; }
+    .spec { grid-column: 1 !important; height: 30svh; overflow: hidden; padding: 1rem 1.25rem 0; margin-inline: -1.25rem; display: flex; align-items: flex-end; }
+    .spec:last-child { background: var(--ink); color: var(--bg); }
+    .spec .word { font-size: 22vw; transform: none; padding-bottom: .12em; }
+    .plans { display: none; }
+    .plans-mobile { display: grid; gap: 3.5rem; }
+    .pm { padding: 1.5rem 1.25rem; background: var(--surface); }
+    .pm.rec { background: var(--accent); color: var(--accent-ink); }
+    .pm h3 { font-size: 9vw; }
+    .pm .price { font-size: 9vw; font-weight: 400; letter-spacing: -0.035em; line-height: 1.1; }
+    .pm dl { margin-top: 1.25rem; display: grid; gap: .9rem; }
+    .pm dt { opacity: .8; font-size: 1rem; }
+    .pm dd { font-size: 1.0625rem; }
+    .pm .button { width: 100%; margin-top: 1.5rem; }
+    .pm.rec .button { background: var(--accent-ink); color: var(--ink); }
+    .steps { row-gap: 2.5rem; padding-inline: 1.25rem; }
+    .steps h2, .steps h3 { font-size: 8.4vw; white-space: normal; }
+    .steps .s1 { grid-column: 1 / -1; }
+    .steps .s2 { grid-column: 1 / -1; padding-left: 6vw; }
+    .steps .s3 { grid-column: 1 / -1; padding-left: 12vw; }
+    .steps .s4 { grid-column: 1 / -1; padding-left: 18vw; }
+    .faq { grid-template-columns: 1fr; padding-inline: 1.25rem; }
+    .faq-side, .faq-text { grid-column: 1; }
+    .faq-side figure { display: none; }
+    .faq-text { columns: 1; margin-top: 1.5rem; }
+    .faq-text p { max-width: none; }
+    .rows li { font-size: 9.6vw; min-height: 5.25rem; padding-inline: 1rem; }
+    .rows .photo { display: none; }
+    .round { width: 56px; height: 56px; margin-left: auto; }
+    .cols { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 48em) and (max-width: 63.99em) { .faq-text { columns: 2; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="top">
+    <a class="wordmark" href="#">Ahmed Zuhair</a>
+    <nav class="toplinks" aria-label="Sections">
+      <a class="link" href="#work">Samples</a>
+      <a class="link" href="#prices">Prices</a>
+      <a class="link" href="#questions">Questions</a>
+    </nav>
+    <a class="button" href="https://wa.me/923094413394?text=Assalam%20o%20alaikum%2C%20I%20want%20a%20website%20for%20my%20business">WhatsApp me</a>
+  </div>
+  <div class="hero-body">
+    <div class="hero-aside" data-rise style="--i:4">
+      <p>Final-year Computer Science, FAST-NUCES Lahore.</p>
+      <p>Built the SCNT Studio store and twelve other projects.</p>
+    </div>
+    <div>
+      <h1 class="lines">
+        <span class="line"><span data-line style="--i:0">Put your shop</span></span>
+        <span class="line"><span data-line style="--i:1">on Google</span></span>
+      </h1>
+      <p class="sub" data-rise style="--i:3">One-page websites for Lahore shops, clinics, academies and home kitchens. Live in 3 days, from PKR 9,000.</p>
+      <div class="actions" data-rise style="--i:4">
+        <a class="button" href="#try">See your own page</a>
+        <a class="link link-plain" href="#prices">Prices</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="try" id="try" aria-labelledby="try-h">
+    <div class="try-copy">
+      <h2 id="try-h" data-reveal>Type your shop’s name</h2>
+      <p class="statement" data-reveal>Customers search Google before they visit. Here’s what they’d find: your prices, your timings and a WhatsApp button.</p>
+      <form id="try-form" data-reveal>
+        <label>Business name
+          <input class="field" id="try-name" name="name" value="Dough &amp; Daughters" maxlength="40" autocomplete="organization">
+        </label>
+        <label>Kind of business
+          <select class="field" id="try-kind" name="kind">
+            <option value="bakery">Home bakery</option>
+            <option value="clinic">Clinic</option>
+            <option value="academy">Tuition academy</option>
+            <option value="salon">Salon</option>
+            <option value="shop">Clothing shop</option>
+          </select>
+        </label>
+        <a class="button" id="try-send" href="https://wa.me/923094413394?text=I%20want%20a%20website%20for%20my%20business">Send me this page on WhatsApp</a>
+      </form>
+    </div>
+    <div class="try-phone" data-reveal>
+      <div class="phone" data-ui>
+        <div class="screen" id="screen" style="background:#8C2F39;color:#fff" aria-live="polite">
+          <div class="s-hero">
+            <div class="s-name" id="s-name">Dough &amp; Daughters</div>
+            <div class="s-line" id="s-line">Cakes and brownies baked to order. Delivery across DHA and Gulberg.</div>
+            <span class="s-wa">Order on WhatsApp</span>
+          </div>
+          <ul id="s-list">
+            <li>Chocolate fudge cake, 2 lb <b>Rs 3,200</b></li>
+            <li>Lotus Biscoff cake, 2 lb <b>Rs 3,800</b></li>
+            <li>Fudge brownies, box of 6 <b>Rs 1,400</b></li>
+            <li>Brown butter cookies, 8 <b>Rs 1,600</b></li>
+          </ul>
+          <div class="s-foot" id="s-foot">Open daily, 10 am to 9 pm</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work" aria-labelledby="work-h">
+    <h2 id="work-h" data-reveal>Samples and work</h2>
+    <ul class="names" data-reveal>
+      <li><a href="demos/clinic.html">Brightbite Dental</a></li>
+      <li><a href="demos/bakery.html">Dough &amp; Daughters</a></li>
+      <li><a href="demos/academy.html">Ilm Ghar Academy</a></li>
+      <li><a href="https://scnt.studio">SCNT Studio</a></li>
+      <li><a href="https://github.com/irfy2k/ClinicalHub">ClinicalHub</a></li>
+      <li><a href="https://customizer-three.vercel.app">FabricOS<span class="frame keep"><img src="assets/web/fabric.jpg" alt="" width="900" height="563" loading="lazy"></span></a></li>
+      <li><a href="https://negotiator-frontend-iota.vercel.app/">The Negotiator<span class="frame keep"><img src="assets/web/negotiator.jpg" alt="" width="900" height="563" loading="lazy"></span></a></li>
+      <li><a href="https://irfy2k.github.io">Walls Were Built to Fall<span class="frame keep"><video src="assets/web/walls.mp4" poster="assets/web/walls.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video></span></a></li>
+      <li><a href="https://irfy2k.github.io/lighthouse/">Lighthouse<span class="frame"><img src="assets/web/lighthouse.jpg" alt="" width="900" height="563" loading="lazy"></span></a></li>
+      <li><a href="https://github.com/irfy2k/MatchDay">MatchDay</a></li>
+      <li><a href="https://voxl-portfolio.vercel.app">Voxl<span class="frame"><img src="assets/web/voxl.jpg" alt="" width="900" height="563" loading="lazy"></span></a></li>
+      <li><a href="https://github.com/irfy2k/2d-Game">Riposte<span class="frame"><img src="assets/web/riposte.jpg" alt="" width="900" height="443" loading="lazy"></span></a></li>
+      <li><a href="https://irfy2k.github.io/tetris/">Tetris<span class="frame"><img src="assets/web/tetris.jpg" alt="" width="900" height="563" loading="lazy"></span></a></li>
+      <li><a href="https://daylight-lime-omega.vercel.app">Daylight</a></li>
+    </ul>
+    <p class="work-note" data-reveal>The first three are sample businesses: open them on your phone to see what your customers would get. SCNT Studio is a perfume store I built on WooCommerce for a paying client in one month. The rest are apps, games and 3D sites from 2024 to 2026.</p>
+  </section>
+
+  <figure class="relief">
+    <img src="assets/web/street-view-anarkali-lahore.jpg" alt="Anarkali Bazaar at night, crowded with people under lit shop signs" width="1600" height="900" fetchpriority="low">
+    <figcaption>Anarkali Bazaar at night. Hundreds of signs, and almost none of them on Google.</figcaption>
+  </figure>
+
+  <section class="showcase" id="showcase" aria-labelledby="show-h">
+    <div class="show-head">
+      <h2 id="show-h" data-reveal>One question, answered</h2>
+      <p data-reveal>Every shop with an Instagram page gets the same message all day. A website answers it before it’s asked, so the people who message you are the ones ready to buy.</p>
+    </div>
+    <div class="specimens">
+      <div class="spec">
+        <span class="word" id="ask">price?</span>
+      </div>
+      <div class="spec">
+        <span class="word" id="answer">Rs 3,200</span>
+      </div>
+    </div>
+    <div class="caps">
+      <p>“price?” is what customers send you, <b><span class="count" id="count">40</span> times a day</b>.</p>
+      <p>“<span id="answer-cap">Rs 3,200</span>” is what your website shows them instead.</p>
+    </div>
+  </section>
+
+  <section class="pricing" id="prices" aria-labelledby="prices-h">
+    <table class="plans">
+      <thead>
+        <tr>
+          <th scope="col"><h2 id="prices-h">Prices</h2></th>
+          <th scope="col" class="rec"><span class="plan-name">One page</span><span class="plan-price">PKR 9,000 <small>once</small></span></th>
+          <th scope="col"><span class="plan-name">Business</span><span class="plan-price">PKR 18,000 <small>once</small></span></th>
+          <th scope="col"><span class="plan-name">Online shop</span><span class="plan-price">PKR 35,000 <small>and up</small></span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Pages</th><td class="rec">One long page</td><td>Up to four</td><td>Store with cart</td></tr>
+        <tr><th scope="row">Ready in</th><td class="rec">3 days</td><td>5 days</td><td>3 to 4 weeks</td></tr>
+        <tr><th scope="row">Web address</th><td class="rec">Free address</td><td>Your own .com or .pk</td><td>Your own .com or .pk</td></tr>
+        <tr><th scope="row">Orders</th><td class="rec">WhatsApp button</td><td>WhatsApp for each item</td><td>Cash on delivery checkout</td></tr>
+        <tr><th scope="row">Google Maps listing</th><td class="rec">Linked</td><td>Set up or fixed</td><td>Set up or fixed</td></tr>
+        <tr><th scope="row">Hosting</th><td class="rec">Free, no monthly bill</td><td>Free, no monthly bill</td><td>About PKR 1,500 a month</td></tr>
+        <tr><th scope="row">Changes included</th><td class="rec">Two rounds</td><td>Three rounds</td><td>Two weeks of fixes</td></tr>
+        <tr class="buy"><td></td>
+          <td class="rec"><a class="button" href="https://wa.me/923094413394?text=I%20want%20the%20One%20page%20website%20(PKR%209%2C000)">Start with One page</a></td>
+          <td><a class="button" href="https://wa.me/923094413394?text=I%20want%20the%20Business%20website%20(PKR%2018%2C000)">Start with Business</a></td>
+          <td><a class="button" href="https://wa.me/923094413394?text=I%20want%20an%20online%20shop">Ask about a shop</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="plans-mobile">
+      <h2>Prices</h2>
+      <div class="pm rec">
+        <h3>One page</h3><p class="price">PKR 9,000</p>
+        <dl><dt>Pages</dt><dd>One long page</dd><dt>Ready in</dt><dd>3 days</dd><dt>Orders</dt><dd>WhatsApp button</dd><dt>Hosting</dt><dd>Free, no monthly bill</dd><dt>Changes included</dt><dd>Two rounds</dd></dl>
+        <a class="button" href="https://wa.me/923094413394?text=I%20want%20the%20One%20page%20website%20(PKR%209%2C000)">Start with One page</a>
+      </div>
+      <div class="pm">
+        <h3>Business</h3><p class="price">PKR 18,000</p>
+        <dl><dt>Pages</dt><dd>Up to four</dd><dt>Ready in</dt><dd>5 days</dd><dt>Web address</dt><dd>Your own .com or .pk</dd><dt>Google Maps listing</dt><dd>Set up or fixed</dd><dt>Changes included</dt><dd>Three rounds</dd></dl>
+        <a class="button" href="https://wa.me/923094413394?text=I%20want%20the%20Business%20website%20(PKR%2018%2C000)">Start with Business</a>
+      </div>
+      <div class="pm">
+        <h3>Online shop</h3><p class="price">PKR 35,000+</p>
+        <dl><dt>Pages</dt><dd>Store with cart</dd><dt>Ready in</dt><dd>3 to 4 weeks</dd><dt>Orders</dt><dd>Cash on delivery checkout</dd><dt>Hosting</dt><dd>About PKR 1,500 a month</dd></dl>
+        <a class="button" href="https://wa.me/923094413394?text=I%20want%20an%20online%20shop">Ask about a shop</a>
+      </div>
+    </div>
+    <p class="care" data-reveal>After launch, monthly care is PKR 2,000: new prices, new photos and offers, up to five updates a month. Domains are charged at cost, usually PKR 3,000 to 5,000 a year, and registered in your name.</p>
+  </section>
+
+  <section class="steps" aria-labelledby="how-h">
+    <div class="s1" data-reveal><h2 id="how-h">First you send photos.</h2><p>Your logo, a few pictures of the shop or the food, your price list and timings. WhatsApp is fine.</p></div>
+    <div class="s2" data-reveal><h3>Then you pay half.</h3><p>JazzCash, Easypaisa or bank transfer. Work starts the same day.</p></div>
+    <div class="s3" data-reveal><h3>You check it on your phone.</h3><p>I send a private link. Ask for changes; two rounds are included.</p></div>
+    <figure class="pic" data-reveal><img src="assets/web/a-famous-book-sellers-shop-at-mall.jpg" alt="An old bookshop with a green signboard on Mall Road, Lahore, with cars parked in front" width="1600" height="1151" fetchpriority="low"><figcaption>A bookseller on Mall Road, open since before the internet.</figcaption></figure>
+    <div class="s4" data-reveal><h3>It’s live in three days.</h3><p>Pay the rest when you’re happy. Then it goes on Google with your name on it.</p></div>
+  </section>
+
+  <section class="faq" id="questions" aria-labelledby="faq-h">
+    <div class="faq-side">
+      <h2 id="faq-h" data-reveal>Questions</h2>
+      <figure data-reveal>
+        <img src="assets/web/lahore-street-7869243.jpg" alt="A Lahore street corner under large painted billboards, with motorbikes and a van" width="1600" height="1200" fetchpriority="low">
+        <figcaption>A street corner in Lahore.</figcaption>
+      </figure>
+    </div>
+    <div class="faq-text" data-reveal>
+      <p><b>I already have Instagram. Why a website?</b> Google shows websites, not Instagram posts, when someone searches “bakery near me” or “dentist in Johar Town”. A website also works for people who don’t use Instagram.</p>
+      <p><b>Do I pay every month?</b> No. One page and Business are hosted free. You pay once, plus a yearly domain if you want your own address.</p>
+      <p><b>Can it be in Urdu?</b> Yes. English, Urdu, or both on the same page.</p>
+      <p><b>Who owns the site?</b> You do. The domain is registered in your name, and you get the files.</p>
+      <p><b>What if I don’t like it?</b> You see it before you pay the second half. Two rounds of changes are included.</p>
+      <p><b>How do customers order?</b> Each item can have its own WhatsApp button that opens a chat with the item already typed.</p>
+      <p><b>Will I show up on Google?</b> I link the site to your Google Maps listing and set it up for search. Ranking first for a busy term takes longer and isn’t promised.</p>
+      <p><b>What do you need from me?</b> Your logo if you have one, three to six photos, your services or menu with prices, timings, address and WhatsApp number.</p>
+      <p><b>Who are you?</b> A final-year Computer Science student at FAST-NUCES Lahore. I’ve built online stores, apps and games for clients and competitions.</p>
+    </div>
+  </section>
+
+  <section class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h" data-reveal>Talk to me</h2>
+    <ul class="rows">
+      <li>Ahmed Zuhair <span class="photo"><img src="assets/web/a-bazaar-in-lahore-pakistan.jpg" alt="A narrow bazaar street in Lahore with parked motorbikes" width="1600" height="1600" fetchpriority="low"></span></li>
+      <li>Lahore, near FAST-NUCES</li>
+      <li><a href="https://wa.me/923094413394">WhatsApp 0309 4413394</a></li>
+      <li>Replies 10 am to 10 pm</li>
+      <li><a href="mailto:a.zuhair.baig@gmail.com">a.zuhair.baig@gmail.com</a></li>
+      <li class="greet">Salaam <a class="round" href="https://wa.me/923094413394?text=Assalam%20o%20alaikum%2C%20I%20want%20a%20website%20for%20my%20business" aria-label="Message me on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="cols">
+    <ul><li>Contact</li><li><a href="https://wa.me/923094413394">WhatsApp</a></li><li><a href="mailto:a.zuhair.baig@gmail.com">Email</a></li></ul>
+    <ul><li>This page</li><li><a href="#try">See your own page</a></li><li><a href="#work">Samples</a></li><li><a href="#prices">Prices</a></li></ul>
+    <ul><li>Elsewhere</li><li><a href="https://irfy2k.github.io">Portfolio</a></li><li><a href="https://github.com/irfy2k">GitHub</a></li><li><a href="https://www.linkedin.com/in/ahmedzuhairbaig">LinkedIn</a></li></ul>
+    <ul><li>Hours</li><li>Every day</li><li>10 am to 10 pm</li></ul>
+  </div>
+  <svg class="bigname" viewBox="0 0 1000 150" role="img" aria-label="Ahmed Zuhair"><text x="0" y="120" textLength="1000" lengthAdjust="spacingAndGlyphs" font-family="Switzer, system-ui, sans-serif" font-weight="600" font-size="160" letter-spacing="-6">Ahmed Zuhair</text></svg>
+  <p class="legal">Pictures: <a href="https://commons.wikimedia.org/w/index.php?curid=43389283">“Street view anarkali lahore”</a> by Ali lahoti, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=148251936">“Lahore Street (7869243)”</a> by Guilhem Vellut, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=54246498">“A famous Book Sellers Shop at Mall Road, Lahore”</a> by Sunni Person, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>; <a href="https://commons.wikimedia.org/w/index.php?curid=105143668">“A bazaar in Lahore, Pakistan”</a> by William-lautman, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; all via Wikimedia Commons. Project images are my own. © <span id="year">2026</span> Ahmed Zuhair.</p>
+</footer>
+
+<script src="assets/base.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
+<script src="assets/services.js" defer></script>
+</body>
+</html>

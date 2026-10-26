@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brightbite Dental, Johar Town (sample site)</title>
+<meta name="description" content="Sample website for a made-up dental clinic in Johar Town, Lahore. Fees, timings and booking on WhatsApp.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Brightbite Dental, Johar Town (sample site)">
+<meta property="og:description" content="Sample website for a made-up dental clinic in Johar Town, Lahore. Fees, timings and booking on WhatsApp.">
+<meta property="og:image" content="https://irfy2k.github.io/sites/assets/og/clinic.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<style>
+  :root {
+    --bg: #eeecea; --surface: #e4e1dd; --ink: #333231; --muted: #5f5b57;
+    --accent: #5c6b54; --accent-ink: #ffffff; --accent-strong: #4a5843;
+    --field: #cdc3b6;
+    --font-display: 'Switzer', system-ui, sans-serif; --font-text: 'Switzer', system-ui, sans-serif;
+    --step-display: clamp(2.6rem, 1.4rem + 3.6vw, 4.5rem);
+    --margin: 12px; --radius: 0px;
+  }
+  body { letter-spacing: -0.01em; }
+  h1, h2, h3 { font-weight: 400; letter-spacing: -0.03em; line-height: 1.05; }
+  .demo-bar { background: var(--ink); color: var(--bg); padding: .7rem 1rem; font-size: var(--step-small); text-align: center; }
+  .demo-bar a { color: #fff; font-weight: 500; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; }
+  .col { min-width: 0; }
+  .stage-col { display: grid; gap: 12px; align-content: start; }
+  .stage { position: sticky; top: 12px; height: calc(100svh - 24px); background: var(--surface); }
+  .stage img { width: 100%; height: 100%; object-fit: cover; }
+  .stage figcaption { position: absolute; right: 16px; bottom: 16px; max-width: calc(100% - 32px); background: var(--bg); padding: .45rem .7rem; font-size: var(--step-small); }
+
+  /* the appointment card */
+  .card { background: #ffffff; min-height: calc(100svh - 24px - 2.6rem); display: flex; flex-direction: column; }
+  .stripe { height: 56px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='1'%3E%3Crect width='28' height='1' fill='%235c6b54'/%3E%3C/svg%3E") repeat-x left top / 56px 100%; }
+  .card-body { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 3rem 2rem; }
+  .mark { font-weight: 500; font-size: var(--step-lead); letter-spacing: -0.02em; }
+  .card h1 { font-size: var(--step-display); margin-top: 2.5rem; }
+  .card .sub { margin: 1.5rem auto 0; max-width: 36ch; }
+  .card .button { margin-top: 2rem; background: var(--accent); }
+  @media (hover: hover) and (pointer: fine) { .button:hover { background: var(--accent-strong); } }
+  .card nav { display: flex; gap: 1.5rem; justify-content: center; padding: 0 1rem 1.75rem; font-size: var(--step-small); }
+  .card nav a { min-height: 44px; display: inline-flex; align-items: center; }
+
+  .sec { padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 4vw, 4rem); }
+  .sec h2 { font-size: var(--step-head); margin-bottom: 2rem; }
+
+  /* the live thing: fill the card */
+  .book { background: var(--accent); color: var(--accent-ink); }
+  .book form { display: grid; gap: 1rem; max-width: 30rem; }
+  .book label { display: grid; gap: .35rem; font-weight: 500; }
+  .book .field { background: #ffffff; color: var(--ink); }
+  .slip { margin-top: 2.5rem; background: #ffffff; color: var(--ink); max-width: 30rem; }
+  .slip .stripe { height: 16px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='1'%3E%3Crect width='12' height='1' fill='%23333231'/%3E%3C/svg%3E") repeat-x left top / 24px 100%; }
+  .slip-body { padding: 1.5rem; display: grid; gap: .35rem; }
+  .slip-body .big { font-size: var(--step-lead); font-weight: 500; letter-spacing: -0.02em; }
+  .slip .button { width: 100%; background: var(--ink); color: #fff; }
+
+  .rows-t { display: grid; gap: 3.5rem; }
+  .rows-t h3 { font-size: var(--step-lead); font-weight: 500; }
+  .rows-t ul { margin: .75rem 0 0; padding: 0; list-style: none; display: grid; gap: .5rem; }
+
+  .menu-g { display: grid; gap: 3rem; }
+  .menu-g h3 { font-size: var(--step-lead); font-weight: 500; margin-bottom: 1rem; }
+  .item { display: flex; justify-content: space-between; gap: 1.5rem; font-variant-numeric: tabular-nums; }
+  .item + .item { margin-top: 1.1rem; }
+  .item span:last-child { white-space: nowrap; }
+  .item small { display: block; color: var(--muted); font-size: var(--step-small); }
+
+  .letter { background: var(--field); }
+  .letter .portrait { width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 500; }
+  .letter p { margin-top: 1.25rem; max-width: 44ch; }
+  .letter .sign { margin-top: 2rem; font-size: var(--step-lead); }
+  .letter .role { font-size: var(--step-small); }
+
+  .facts { display: grid; gap: .35rem; margin-bottom: 2.5rem; }
+  details { padding: .9rem 0; }
+  summary { cursor: pointer; font-size: var(--step-lead); list-style: none; display: flex; justify-content: space-between; gap: 1rem; min-height: 44px; align-items: center; letter-spacing: -0.02em; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 1.4em; line-height: 1; transition: transform var(--t-ui) var(--ease-out); }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: .6rem; color: var(--muted); max-width: 46ch; }
+
+  .wide { grid-column: 1 / -1; }
+  .close { background: var(--ink); color: var(--bg); display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 12px; }
+  .close .links { grid-column: 2; grid-row: 1 / span 2; }
+  .close .say { font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.25rem); line-height: 1.15; max-width: 22ch; letter-spacing: -0.03em; }
+  .close .links { margin-top: 2.5rem; display: grid; gap: .5rem; }
+  .close a { color: #fff; }
+  .close .small { margin-top: 1rem; color: #c9c5c0; }
+  .credits { padding: 1.5rem clamp(1.5rem, 4vw, 4rem) 2.5rem; font-size: var(--step-small); max-width: 70ch; }
+
+  @media (max-width: 63.99em) {
+    .split { grid-template-columns: 1fr; }
+    .stage-col { order: -1; }
+    .stage { position: relative; top: 0; height: 48svh; }
+    .stage ~ .stage { display: none; }
+    .card { min-height: auto; margin-top: -24px; position: relative; margin-inline: 12px; }
+    .card h1 { font-size: 9vw; }
+    .close .say { font-size: 1.5rem; }
+    .close { grid-template-columns: 1fr; }
+    .close .links { grid-column: 1; grid-row: auto; }
+    .stripe { height: 40px; }
+  }
+  @media (min-width: 40em) and (max-width: 63.99em) { .rows-t { grid-template-columns: 1fr 1fr; } .menu-g { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="demo-bar">Sample site for a made-up clinic, built by Ahmed Zuhair. <a href="../index.html#prices">See prices</a> or <a href="https://wa.me/923094413394?text=I%20saw%20the%20dental%20clinic%20sample.%20I%20want%20a%20site%20like%20this.">Get one like this</a></div>
+
+<div class="split">
+  <div class="col">
+    <header class="card">
+      <div class="stripe"></div>
+      <div class="card-body">
+        <div class="mark">Brightbite Dental</div>
+        <h1 class="lines"><span class="line"><span data-line style="--i:0">Gentle dentistry</span></span><span class="line"><span data-line style="--i:1">in Johar Town</span></span></h1>
+        <p class="sub" data-rise style="--i:3">Check-ups, fillings, root canals and braces in Block G1. Female dentist on every shift. Walk-ins until 8 pm.</p>
+        <a class="button" data-rise style="--i:4" href="#book">Book a visit</a>
+      </div>
+      <nav aria-label="Sections"><a class="link" href="#treatments">Treatments</a><a class="link" href="#fees">Fees</a><a class="link" href="#visit">Visit</a></nav>
+    </header>
+
+    <main>
+      <section class="sec book" id="book" aria-labelledby="book-h">
+        <h2 id="book-h" data-reveal>Book your visit</h2>
+        <form id="book-form" data-reveal>
+          <label>Treatment
+            <select class="field" id="b-t">
+              <option data-fee="Rs 1,500">Consultation and check-up</option>
+              <option data-fee="Rs 4,000">Scaling and polishing</option>
+              <option data-fee="Rs 5,000">Tooth-coloured filling</option>
+              <option data-fee="Rs 15,000">Root canal</option>
+              <option data-fee="Rs 3,000">Braces consultation</option>
+            </select>
+          </label>
+          <label>Day
+            <select class="field" id="b-d"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option selected>Thursday</option><option>Friday</option><option>Saturday</option></select>
+          </label>
+          <label>Time
+            <select class="field" id="b-h"><option>11 am</option><option>1 pm</option><option>4 pm</option><option selected>6 pm</option><option>7:30 pm</option></select>
+          </label>
+        </form>
+        <div class="slip" data-reveal aria-live="polite">
+          <div class="stripe"></div>
+          <div class="slip-body">
+            <span>Your next visit</span>
+            <span class="big" id="slip-what">Consultation and check-up</span>
+            <span id="slip-when">Thursday at 6 pm, from Rs 1,500</span>
+          </div>
+          <a class="button" id="slip-send" href="https://wa.me/923094413394">Send this to the clinic on WhatsApp</a>
+        </div>
+      </section>
+
+      <section class="sec" id="treatments" aria-labelledby="t-h">
+        <h2 id="t-h" data-reveal>What we treat</h2>
+        <div class="rows-t">
+          <div data-reveal><h3>Check-ups for the whole family</h3><ul><li>Examination and X-ray</li><li>Children from age three</li><li>A written plan before any work</li></ul></div>
+          <div data-reveal><h3>Cleaning and gums</h3><ul><li>Scaling and polishing</li><li>Gum treatment for bleeding gums</li><li>Advice for smokers and paan users</li></ul></div>
+          <div data-reveal><h3>Fillings and root canals</h3><ul><li>Tooth-coloured fillings</li><li>Single-visit root canals where possible</li><li>Crowns made in Lahore</li></ul></div>
+          <div data-reveal><h3>Braces and aligners</h3><ul><li>Metal and ceramic braces</li><li>Clear aligners for adults</li><li>Monthly instalments</li></ul></div>
+        </div>
+      </section>
+
+      <section class="sec" id="fees" aria-labelledby="f-h" style="background:var(--surface)">
+        <h2 id="f-h" data-reveal>Fees</h2>
+        <div class="menu-g" data-reveal>
+          <div>
+            <h3>Everyday care</h3>
+            <div class="item"><span>Consultation and check-up<small>Includes one X-ray</small></span><span>Rs 1,500</span></div>
+            <div class="item"><span>Scaling and polishing<small>About 40 minutes</small></span><span>4,000</span></div>
+            <div class="item"><span>Tooth-coloured filling<small>Per tooth</small></span><span>from 5,000</span></div>
+          </div>
+          <div>
+            <h3>Treatment</h3>
+            <div class="item"><span>Root canal<small>Front or back tooth</small></span><span>Rs 15,000–25,000</span></div>
+            <div class="item"><span>Ceramic crown<small>Two visits</small></span><span>from 22,000</span></div>
+            <div class="item"><span>Braces, full treatment<small>Instalments available</small></span><span>from 120,000</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec letter" aria-label="A note from the dentist">
+        <div class="portrait" aria-hidden="true">AR</div>
+        <p>We opened in Johar Town because families here kept driving to Gulberg for a check-up that takes twenty minutes.</p>
+        <p>Every visit starts with a written plan and the fee for each step. Nothing is done that you haven’t agreed to first.</p>
+        <p>If you’re nervous, tell us when you book. We’ll give you the first slot of the day, when the clinic is quiet.</p>
+        <p class="sign">Dr. A. Rahman</p>
+        <p class="role">BDS, 12 years in practice</p>
+      </section>
+
+      <section class="sec" id="visit" aria-labelledby="v-h">
+        <h2 id="v-h" data-reveal>Visit us</h2>
+        <div class="facts" data-reveal>
+          <span>Block G1, near the main boulevard, Johar Town, Lahore</span>
+          <span>Monday to Saturday, 11 am to 8 pm. Closed Sunday.</span>
+          <span>Parking in front of the clinic.</span>
+        </div>
+        <details><summary>Do you see walk-ins?</summary><p>Yes, until 8 pm. Booking on WhatsApp means you won’t wait.</p></details>
+        <details><summary>Is there a female dentist?</summary><p>Yes. Dr. S. Iqbal is on every shift.</p></details>
+        <details><summary>Do you treat children?</summary><p>From age three. Bring them for a first check-up before anything hurts.</p></details>
+        <details><summary>Can I pay in instalments?</summary><p>For braces and larger treatment, yes, monthly by bank transfer or JazzCash.</p></details>
+        <details><summary>Do you take emergencies?</summary><p>Message us on WhatsApp. Swelling or a broken tooth gets the next free chair.</p></details>
+      </section>
+    </main>
+
+  </div>
+
+  <div class="col stage-col">
+    <figure class="stage"><img src="assets/clinic/web/brush.jpg" alt="A toothbrush with striped toothpaste squeezed onto it" width="1400" height="1145"><figcaption>Brush twice, see us twice a year.</figcaption></figure>
+    <figure class="stage"><img src="assets/clinic/web/miswak003.jpg" alt="Five miswak sticks laid side by side" width="1400" height="1050" loading="lazy"><figcaption>Miswak, the oldest toothbrush in the bazaar.</figcaption></figure>
+    <figure class="stage"><img src="assets/clinic/web/picsum-1068.jpg" alt="A small plant in a vase on a white table against a blue wall" width="1000" height="1250" loading="lazy"><figcaption>A quiet room for nervous patients.</figcaption></figure>
+    <figure class="stage"><img src="assets/clinic/web/picsum-208.jpg" alt="A window in a dark room looking onto green trees" width="1000" height="1250" loading="lazy"><figcaption>Morning light, first slot of the day.</figcaption></figure>
+  </div>
+  <div class="wide">
+    <footer class="sec close">
+      <p class="say">Toothache or a check-up? Message us and we’ll find a time.</p>
+      <div class="links">
+        <a href="https://wa.me/923094413394">WhatsApp 0309 4413394</a>
+        <a href="https://maps.google.com/?q=Johar+Town+Lahore">Directions on Google Maps</a>
+      </div>
+      <p class="small">Johar Town, Lahore. Replies within the hour during clinic hours.</p>
+    </footer>
+    <p class="credits">Brightbite Dental is a sample business; names and fees are examples. Pictures: <a href="https://commons.wikimedia.org/wiki/File:Miswak003.jpg">“Miswak003”</a>, and <a href="https://commons.wikimedia.org/wiki/File:Toothbrush,_Toothpaste,_Dental_Care_(571741)_(cropped).jpg">“Toothbrush, Toothpaste, Dental Care”</a>, via Wikimedia Commons (see assets/clinic/credits.json for authors and licences); two photographs from Unsplash.</p>
+  </div>
+</div>
+
+<script src="../assets/base.js" defer></script>
+<script>
+  const $ = (id) => document.getElementById(id);
+  function slip() {
+    const t = $('b-t'), opt = t.options[t.selectedIndex];
+    $('slip-what').textContent = opt.text;
+    $('slip-when').textContent = `${$('b-d').value} at ${$('b-h').value}, from ${opt.dataset.fee}`;
+    $('slip-send').href = 'https://wa.me/923094413394?text=' + encodeURIComponent(`Assalam o alaikum, I'd like to book: ${opt.text}, ${$('b-d').value} at ${$('b-h').value}.`);
+  }
+  ['b-t', 'b-d', 'b-h'].forEach((id) => $(id).addEventListener('change', slip));
+  slip();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+[
+ {
+  "file": "demos/assets/clinic/miswak003.jpg",
+  "media": "image",
+  "ref": "openverse:61a5a8b0-704d-4280-bb96-2242869b0861",
+  "title": "Miswak003",
+  "creator": "Middayexpress",
+  "creatorUrl": "https://commons.wikimedia.org/wiki/User:Middayexpress",
+  "date": null,
+  "license": "CC BY-SA 3.0",
+  "licenseCode": "by-sa",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "creditRequired": true,
+  "page": "https://commons.wikimedia.org/w/index.php?curid=15597890",
+  "via": "Wikimedia Commons",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Miswak003.jpg",
+  "width": 1600,
+  "height": 1200,
+  "bytes": 527268,
+  "credit": "\"Miswak003\" by Middayexpress, CC BY-SA 3.0, via Wikimedia Commons",
+  "notes": [
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+  ],
+  "saved": "2026-10-26T11:23:53.665Z"
+ },
+ {
+  "file": "demos/assets/clinic/brush.jpg",
+  "media": "image",
+  "ref": "openverse:2c4b7b3f-13ba-4ae0-abf8-9487b6e0cdcc",
+  "title": "Toothbrush, Toothpaste, Dental Care (571741) (cropped)",
+  "creator": "Steve Buissinne, South Africa",
+  "creatorUrl": "https://pixabay.com/users/stevepb-282134",
+  "date": null,
+  "license": "CC0",
+  "licenseCode": "cc0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en/",
+  "creditRequired": false,
+  "page": "https://commons.wikimedia.org/w/index.php?curid=91360345",
+  "via": "Wikimedia Commons",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Toothbrush%2C_Toothpaste%2C_Dental_Care_%28571741%29_%28cropped%29.jpg",
+  "width": 2857,
+  "height": 2336,
+  "bytes": 455395,
+  "credit": "\"Toothbrush, Toothpaste, Dental Care (571741) (cropped)\" by Steve Buissinne, South Africa, CC0, via Wikimedia Commons",
+  "notes": [],
+  "saved": "2026-10-26T11:24:27.949Z"
+ }
+]
