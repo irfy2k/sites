@@ -57,7 +57,7 @@
   .try { background: var(--accent); color: var(--accent-ink); min-height: 90svh; padding: calc(var(--section) / 2) var(--margin); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; }
   .try-copy { grid-column: 1 / span 6; }
   .try h2 { font-size: var(--step-head); }
-  .try .statement { font-size: var(--step-lead); line-height: 1.25; font-weight: 500; letter-spacing: -0.02em; margin-top: 2rem; max-width: 26ch; }
+  .try .statement { font-size: var(--step-lead); line-height: 1.35; font-weight: 500; letter-spacing: -0.02em; margin-top: 2rem; max-width: 26ch; }
   .try form { margin-top: 2.5rem; display: grid; gap: 1rem; max-width: 30rem; }
   .try label { display: grid; gap: .4rem; font-weight: 500; }
   .try .field { background: #ffffff; color: var(--ink); }
@@ -168,6 +168,7 @@
   .rows li { min-height: clamp(5.25rem, 9vw, 9.5rem); display: flex; align-items: flex-end; gap: 1.5rem; padding: 0 var(--margin) .55em; font-size: var(--step-head); line-height: 1; letter-spacing: -0.04em; }
   .rows li:nth-child(even) { background: var(--surface); }
   .rows a { text-decoration: none; }
+  .rows li.mail { font-size: min(var(--step-head), 6.4vw); }
   .rows .photo { margin-left: auto; width: clamp(4rem, 7vw, 7rem); aspect-ratio: 1; border-radius: 50%; overflow: hidden; align-self: center; }
   .rows .photo img { width: 100%; height: 100%; object-fit: cover; }
   .rows li.greet { background: var(--accent); color: var(--accent-ink); }
@@ -233,6 +234,7 @@
     .faq-text { columns: 1; margin-top: 1.5rem; }
     .faq-text p { max-width: none; }
     .rows li { font-size: 9.6vw; min-height: 5.25rem; padding-inline: 1rem; }
+    .rows li.mail { font-size: 7.4vw; }
     .rows .photo { display: none; }
     .round { width: 56px; height: 56px; margin-left: auto; }
     .cols { grid-template-columns: 1fr 1fr; }
@@ -440,7 +442,7 @@
       <li>Lahore, near FAST-NUCES</li>
       <li><a href="https://wa.me/923094413394">WhatsApp 0309 4413394</a></li>
       <li>Replies 10 am to 10 pm</li>
-      <li><a href="mailto:a.zuhair.baig@gmail.com">a.zuhair.baig@gmail.com</a></li>
+      <li class="mail"><a href="mailto:a.zuhair.baig@gmail.com">a.zuhair.baig@gmail.com</a></li>
       <li class="greet">Salaam <a class="round" href="https://wa.me/923094413394?text=Assalam%20o%20alaikum%2C%20I%20want%20a%20website%20for%20my%20business" aria-label="Message me on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a></li>
     </ul>
   </section>
